@@ -1,0 +1,19 @@
+[project]
+name = "soroban_exam"
+version = "0.0.1"
+authors = [
+    { name="Napat Ch." },
+]
+description = "Get a soroban exam from www.sorobanexam.org."
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "GPL-3.0-or-later"
+license-files = ["LICEN[CS]E.*"]
+requires-python = ">=3.8"
+dependencies = [
+  "requests",
+  "beautifulsoup4",
+]

@@ -12,11 +12,11 @@ pip install -r requirements.txt
 ## Useage
 
 ```bash
-./soroban.py --level 6
+./soroban_exam.py --level 6
 ```
 
 ```bash
-usage: soroban.py [-h] [-l LEVEL] [-o OUTPUT]
+usage: soroban_exam.py [-h] [-l LEVEL] [-o OUTPUT]
 
 options:
   -h, --help            show this help message and exit
