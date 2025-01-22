@@ -1,3 +1,7 @@
+[build-system]
+requires = ["flit-core>=3.2"]
+build-backend = "flit_core.buildapi"
+
 [project]
 name = "soroban_exam"
 version = "0.0.1"
@@ -10,10 +14,12 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
-license = "GPL-3.0-or-later"
-license-files = ["LICEN[CS]E.*"]
+license = {file = "LICENSE"}
 requires-python = ">=3.8"
 dependencies = [
   "requests",
   "beautifulsoup4",
 ]
+
+[project.scripts]
+soroban_exam = "soroban_exam:main"

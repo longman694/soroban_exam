@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+__version__ = "0.0.1"
+
 import requests
 import argparse
 from bs4 import BeautifulSoup
@@ -76,10 +78,14 @@ def parse_args():
     return parser.parse_args()
 
 
-if __name__ == '__main__':
+def main():
     options = vars(parse_args())
-    file_name = options.pop('output')
-    if not file_name:
+    pdf_name = options.pop('output')
+    if not pdf_name:
         print(get_exam_link(options))
     else:
-        get_exam_pdf(file_name, override_settings=options)
+        get_exam_pdf(pdf_name, override_settings=options)
+
+
+if __name__ == '__main__':
+    main()
