@@ -1,7 +1,8 @@
 # Soroban Exam
 
 Get a soroban exam from www.sorobanexam.org.
-You can only get the exam once per 30 seconds.
+
+You should only retrieve the exam once every 30 seconds.
 
 ## Install requirements
 
