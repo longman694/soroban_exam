@@ -69,12 +69,19 @@ def get_exam_pdf(pdf_name: str = None, override_settings: dict = None):
         pdf_name = res.headers.get('content-disposition').split('=')[1].strip()
     with open(pdf_name, 'wb') as pdf_file:
         pdf_file.write(res.content)
+        print('Your exam is at {}'.format(pdf_name))
 
 
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-l', '--level', type=int, default=6, help='level of exam (easiest 9 - hardest 1)')
     parser.add_argument('-o', '--output', type=str, default=None, help='output PDF name')
+    parser.add_argument('-m', '--model', type=str, default='moritomo',
+                        choices=['moritomo', 'kojima', 'cumin', 'namuec'],
+                        help="select exam model (default: moritomo)")
+    parser.add_argument('-s', '--solution', type=str, default='Inline',
+                        choices=['Interactive', 'None', 'Inline', 'End', 'SplitEnd'],
+                        help="select exam solution (default: Inline)")
     return parser.parse_args()
 
 
@@ -82,9 +89,12 @@ def main():
     options = vars(parse_args())
     pdf_name = options.pop('output')
     if not pdf_name:
-        print(get_exam_link(options))
+        link = get_exam_link(options)
+        print('Here is you exam link!\n')
+        print('    {}'.format(link))
     else:
         get_exam_pdf(pdf_name, override_settings=options)
+    print('\nIf you like this program, please support https://www.sorobanexam.org/about.html')
 
 
 if __name__ == '__main__':
