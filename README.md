@@ -4,10 +4,10 @@ Get a soroban exam from www.sorobanexam.org.
 
 You should only retrieve the exam once every 30 seconds.
 
-## Install requirements
+## Install
 
-```
-pip install -r requirements.txt
+```shell
+pip install git+https://github.com/longman694/soroban_exam.git
 ```
 
 ## Useage
@@ -25,4 +25,10 @@ options:
                         level of exam (easiest 9 - hardest 1)
   -o OUTPUT, --output OUTPUT
                         output PDF name
+```
+
+## Install requirements
+
+```
+pip install -r requirements.txt
 ```
